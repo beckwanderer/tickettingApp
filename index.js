@@ -1,9 +1,10 @@
 /*
 This is called from the submit form to validate teh form is populated
-giasync function validFormFieldInput() {
+*/
+async function validFormFieldInput() {
     try {
         let checkMandatory = await checkMandatoryDetails();
-        let checkPassenger1 = await checkPassenger(1);g
+        let checkPassenger1 = await checkPassenger(1);
         let checkPassenger2 = await checkPassenger(2);
         let checkContact = await checkContactDetails();
         console.log(checkPassenger1 + checkPassenger2);
@@ -133,7 +134,7 @@ let checkContactDetails = () => {
 function openTab(evt, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
+    for (i = 0; i < tabcontent.length; i++) {ls
       tabcontent[i].style.display = "none";
     }
     tablinks = document.getElementsByClassName("tablinks");
