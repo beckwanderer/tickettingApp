@@ -8,6 +8,9 @@ async function validFormFieldInput() {
         let checkPassenger2 = await checkPassenger(2);
         let checkContact = await checkContactDetails();
         console.log(checkPassenger1 + checkPassenger2);
+        document.getElementById("invalid-feedback").innerHTML = "";
+        document.getElementById("feedback").innerHTML = "Booking Successful!!!";
+
     }
     catch (error) {
         console.log(error);
