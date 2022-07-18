@@ -49,7 +49,7 @@ body {
 
 
 /* Error message */
-#errMsg {
+#invalid-feedback {
     color: red;
 }
 

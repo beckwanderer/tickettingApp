@@ -12,7 +12,7 @@ async function validFormFieldInput() {
     catch (error) {
         console.log(error);
         //alert(error);
-        document.getElementById("errMsg").innerHTML = error;
+        document.getElementById("invalid-feedback").innerHTML = error;
         //document.getElementsByClassName("invalid-feedback").innerHTML = error;       
     }
 }
@@ -42,16 +42,16 @@ let checkMandatoryDetails = () => {
 
                 console.log(`Details: ${detailsFrom} ${detailsTo} ${detailsFromDate} ${detailsToDate} `);
                 if (!detailsOneWay && !detailsReturn) {
-                    reject('Please select if you are travelling one way or return');
+                    reject('Please select if you are travelling one way or return, click on Trip Details.');
                 }
                 else if (detailsFrom === '') {
-                    reject('Please enter where you are travelling from on the details tab.');
+                    reject('Please enter where you are travelling from on the Trip Details tab.');
                 }
                 else if (detailsFromDate === '') {
-                    reject('Please enter the date of travel on the details tab.');
+                    reject('Please enter the date of travel on the Trip Details tab.');
                 }
                 else if (detailsTo === '') {
-                    reject('Please enter where you are going to on the details tab.');
+                    reject('Please enter where you are going to on the Trip Details tab.');
                 }
                 else if (detailsToDate === '' && detailsReturn) {
                     reject('For a return journey you need to enter a return date on the details tab.');
@@ -86,10 +86,10 @@ let checkPassenger = (passenger) => {
                     resolve('Success')
                 }
                 else if (passFirstName.length <= 5)   {
-                    reject(`Passenger ${passenger} first name, ${passFirstName}, must be more than 5 characters.`)
+                    reject(`First name, ${passFirstName} must be more than 5 characters. Please check Passenger ${passenger} tab.`)
                 }
                 else   {
-                    reject(`Passenger ${passenger} second name, ${passSecondName}, must be more than 5 characters.`)
+                    reject(`Second name, ${passSecondName} must be more than 5 characters. Please check Passenger ${passenger} tab.`)
                 }
             },200);
         }
@@ -118,10 +118,10 @@ let checkContactDetails = () => {
 
                 console.log(`Contact: ${emailId} ${mobileNo} `);
                 if (emailId === '') {
-                    reject('Please enter an email address on the contact tab.');
+                    reject('Please enter an email address on the Contact tab.');
                 }
                 else if (mobileNo === '') {
-                    reject('Please enter a mobile number on the contact tab.');
+                    reject('Please enter a mobile number on the Contact tab.');
                 }
                 else {
                     resolve('Success');
@@ -134,7 +134,7 @@ let checkContactDetails = () => {
 /*
 Manage the tab
 */
-function openTab(evt, cityName) {
+function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -144,6 +144,6 @@ function openTab(evt, cityName) {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
