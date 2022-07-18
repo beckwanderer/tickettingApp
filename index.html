@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="index.js"></script>
+    <title>Flights r us</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Booking Application</h1>
+        <h2>Click on Trip Details to start...</h2>
+    </header>
+    <main>
+
+        
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'detailsTab')">Trip Details</button>
+          <button class="tablinks" onclick="openTab(event, 'pass1Tab')">Passenger 1</button>
+          <button class="tablinks" onclick="openTab(event, 'pass2Tab')">Passenger 2</button>
+          <button class="tablinks" onclick="openTab(event, 'contactTab')">Contact Details</button>
+          
+        </div>
+        
+        <div id="detailsTab" class="tabcontent">
+          <form>
+            <div id="detailsTabLine1" class="formStyle">
+                <input type="radio" id="detailOneWay" value=”2”>
+                <label for="detailOneWay">One Way</label>
+                <input type="radio" id="detailReturn" value=”11”>
+                <label for="detailReturn">Return</label>
+            </div>
+
+            <div id="detailsTabLine2" class="formStyle">
+                <label for="detailsFrom">From</label><br/>
+                <input type="text" id="detailsFrom" />
+            </div>
+
+            <div id="detailsTabLine3" class="formStyle">
+                <label for="detailsFromDate">From Date</label><br/>
+                <input type="date" id="detailsFromDate" />
+            </div>
+
+            <div id="detailsTabLine4" class="formStyle">
+                <label for="detailsTo">To</label><br/>
+                <input type="text" id="detailsTo" />
+            </div>
+
+            <div id="detailsTabLine5" class="formStyle">
+                <label for="detailsToDate">To Date</label><br/>
+                <input type="date" id="detailsToDate" />
+            </div>
+          </form>
+        </div>
+        
+        <div id="pass1Tab" class="tabcontent">
+            <form>
+
+                <div id="passTab1Line1" class="formStyle">
+                    <label for="passTitle1">Title</label>
+                    <select "passTitle1">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                    </select>
+                </div>
+
+                <div id="passTab1Line2" class="formStyle">
+                    <label for="passFirstName1">First Name</label><br>
+                    <input type="text" id="passFirstName1" />
+                </div>
+
+                <div id="passTab1Line3" class="formStyle">    
+                    <label for="passSecondName1">Second Name</label><br/>
+                    <input type="text" id="passSecondName1" />
+                </div>
+
+                
+                <div id="passTab1Line4" class="formStyle">
+                    <input type="radio" id="passMale1" value="0">
+                    <label for="passMale1">Male</label>
+                    <input type="radio" id="passFemale1" value="0">
+                    <label for="passFemale1">Female</label>
+                    <input type="radio" id="passOther1" value="0">
+                    <label for="passOther1">Other</label>
+                </div>
+                
+                <div id="passTab1Line5" class="formStyle">
+                    <label for="passAge1">Age</label><br/>
+                    <input type="number" id=passAge1"/>
+                </div>
+
+            </form>
+          
+        </div>
+        
+        <div id="pass2Tab" class="tabcontent">
+            <form>
+
+                <div id="passTab2Line1" class="formStyle">
+                    <label for="passTitle2">Title</label><br/>
+                    <select "passTitle2">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                    </select>
+                </div>
+
+                <div id="passTab2Line2" class="formStyle">
+                    <label for="passFirstName2">First Name</label><br/>
+                    <input type="text" id="passFirstName2" />
+                </div>
+
+                <div id="passTab2Line3" class="formStyle">
+                    <label for="passSecondName2">Second Name</label><br/>
+                    <input type="text" id="passSecondName2" />
+                </div>
+            
+                <div id="passTab2Line4" class="formStyle">
+
+                    <input type="radio" id="passMale2" value="0">
+                    <label for="passMale2">Male</label>
+                    <input type="radio" id="passFemale2" value="0">
+                    <label for="passFemale2">Female</label>
+                    <input type="radio" id="passOther2" value="0">
+                    <label for="passOther2">Other</label>
+                </div>
+
+                <div id="passTab2Line5" class="formStyle">
+                    <label for="passAge2">Age</label><br/>
+                    <input type="number" id=passAge2"/>
+                </div>
+
+            </form>  
+        </div>
+
+        <div id="contactTab" class="tabcontent">
+            <form>
+
+                <div id="contactTabLine1" class="formStyle">
+                    <label for="emailId">Email Address</label><br/>
+                    <input type="text" id="emailId" />
+                </div>
+
+                <div id="contactTabLine2" class="formStyle">
+                    <label for="mobileNo">Mobile No</label><br/>
+                    <input type="text" id="mobileNo" />
+                </div>
+
+                <div id="contactTabLine3" class="formStyle">
+                    <label for="homeAddress">Home Address</label><br/>
+                    <textarea id="homeAddress" name="homeAddress" rows="4" cols="50">   
+                    </textarea>
+                </div>
+
+            </form>  
+        </div>
+
+        <form class="buttonFormStyle">
+            <input type ="button" onclick="validFormFieldInput()" value="Submit Booking" id="bookingButton">
+            <br/>
+            <h3 id="errMsg" class="invalid-feedback"></h3>
+        </form>
+
+      
+        </main>
+
+    <footer>@Copyright 2022, Becky</footer>
+</body>
+</html>
