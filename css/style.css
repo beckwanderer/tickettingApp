@@ -59,7 +59,7 @@ body {
 #pass1Tab, 
 #pass2Tab,
 #contactTab {
-    display: none;
+    /*display: none;*/
  
     height:300px;
  /*   width: 500px;*/
