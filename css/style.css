@@ -45,7 +45,7 @@ body {
     border: 1px solid #ccc;
     border-top: none;
     /*width: 1200px;*/
-    height:350px;
+    height:320px;
 }
 
 
@@ -63,10 +63,8 @@ body {
 #detailsTab, 
 #pass1Tab, 
 #pass2Tab,
-#contactTab {
-    /*display: none;*/
- 
-    height:350px;
+#contactTab { 
+    height:320px;
     padding: 10px;                   
     background-color: lightblue;
 }
@@ -74,6 +72,7 @@ body {
 
 .formStyle {
     padding:10px;
+    font-size: smaller;
  
 }
 
@@ -86,9 +85,13 @@ body {
 
 #bookingButton {
     padding: 5px;
-    font-weight: bold;
-}
+    font-weight: bold;}
 
 header h1 {
     padding: 15px;;
+}
+
+
+footer {
+  padding: 10px;
 }
