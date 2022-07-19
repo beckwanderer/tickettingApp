@@ -3,11 +3,17 @@ This is called from the submit form to validate teh form is populated
 */
 async function validFormFieldInput() {
     try {
-        let checkMandatory = await checkMandatoryDetails();
-        let checkPassenger1 = await checkPassenger(1);
-        let checkPassenger2 = await checkPassenger(2);
-        let checkContact = await checkContactDetails();
+//        let checkMandatory = await checkMandatoryDetails();
+ //       let checkPassenger1 = await checkPassenger(1);
+   //     let checkPassenger2 = await checkPassenger(2);
+     //   let checkContact = await checkContactDetails();
  
+        let checkArray =  await Promise.all (
+            [checkMandatoryDetails(),
+             checkPassenger(1),
+             checkPassenger(2),
+             checkContactDetails()]);
+        
         updateFeedback("Booking Successful!!!", "feedback");
     }
     catch (error) {
