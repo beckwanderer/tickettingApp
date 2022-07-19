@@ -50,13 +50,13 @@ body {
 
 
 /* Error message */
-#invalid-feedback {
+.invalid-feedback {
     color: red;
     padding: 10px;
     display: inline;
 }
 
-#feedback {
+.feedback {
     color: black;
     padding: 10px;
     display: inline;

@@ -7,17 +7,22 @@ async function validFormFieldInput() {
         let checkPassenger1 = await checkPassenger(1);
         let checkPassenger2 = await checkPassenger(2);
         let checkContact = await checkContactDetails();
-        console.log(checkPassenger1 + checkPassenger2);
-        document.getElementById("invalid-feedback").innerHTML = "";
-        document.getElementById("feedback").innerHTML = "Booking Successful!!!";
-
+ 
+        updateFeedback("Booking Successful!!!", "feedback");
     }
     catch (error) {
-        console.log(error);
-        //alert(error);
-        document.getElementById("invalid-feedback").innerHTML = error;
-        //document.getElementsByClassName("invalid-feedback").innerHTML = error;       
+        updateFeedback(error, "invalid-feedback");
     }
+}
+
+/*
+updatefeedback: Displays the ${msg} and applies ${newClass} accordingly 
+*/
+updateFeedback = (msg, newClass) => {
+
+    feedback = document.querySelector("#feedback");
+    feedback.innerHTML = msg;
+    feedback.className = newClass;
 }
 
 /*
@@ -45,7 +50,7 @@ let checkMandatoryDetails = () => {
 
                 console.log(`Details: ${detailsFrom} ${detailsTo} ${detailsFromDate} ${detailsToDate} `);
                 if (!detailsOneWay && !detailsReturn) {
-                    reject('Please select if you are travelling one way or return, click on Trip Details.');
+                    reject('Please select if you are travelling one way or a round trip on the Trip Details tab.');
                 }
                 else if (detailsFrom === '') {
                     reject('Please enter where you are travelling from on the Trip Details tab.');
